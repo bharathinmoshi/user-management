@@ -1,0 +1,48 @@
+.background-d-blue{
+    background: #1f173e;
+}
+.padding-css{
+    margin:5% 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1f173e !important;
+    border-color: #1f173e !important;
+}
+.width-100{
+    width:100%;
+}
+.fontcss{
+    font-size: 14px;
+    font-weight: 600;
+}
+input{
+    border: solid 1px #f04f53;
+    
+    border-radius: 3px;
+}
+input:focus{
+    border: solid 1px #f04f53;
+    border-left: solid 8px #f04f53;
+
+    
+    border-radius: 3px;
+}
+.btn-primary1{
+    border: solid 2px #f04f53;
+}
+.posr{
+    position: absolute;
+    right:0px;
+}
+.mgt1{
+margin-top:1px;
+}
+
+.errorText
+{
+    margin-bottom: 0%;
+    margin-top: 1.5%;
+    color:red
+}

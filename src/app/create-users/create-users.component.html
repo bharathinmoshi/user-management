@@ -1,0 +1,90 @@
+<div class="container-fluid padding-css">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>WELCOME TO USER-MANAGEMENT APPLICATION !</h3>
+            
+            <p class="pt-5 pb-5">Please signup to your account to see your activity</p>
+        </div>
+        <div class="col-md-12">
+            <form  [formGroup]="userformGroup">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row pb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="user_name" id="user_name" aria-describedby="emailHelp"
+                                        placeholder="User Name" [ngClass]="{ 'is-invalid': submitted && f.user_name.errors }">
+                                        <div *ngIf="submitted && f.user_name.errors" class="invalid-feedback">
+                                            <div *ngIf="f.user_name.errors.required">USER-NAME IS REQUIRED</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                        <select  class="form-control" formControlName="role_name" id="role_name" aria-describedby="emailHelp"
+                                        placeholder="USER-ROLE"  [ngClass]="{ 'is-invalid': submitted && f.role_name.errors }"  >
+                                        <option hidden value="" disabled selected>PLAESE SELECT THE ROLES</option>
+                                            <option  *ngFor="let item of rolesArr" value="{{item.role_name}}">{{item.role_name}}</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.role_name.errors" class="invalid-feedback">
+                                            <div *ngIf="f.role_name.errors.required">USER ROLE is required</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="user_mobile_no" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Phone Number" [ngClass]="{ 'is-invalid': submitted && f.user_mobile_no.errors }">
+                                        <div *ngIf="submitted && f.user_mobile_no.errors" class="invalid-feedback">
+                                            <div *ngIf="f.user_mobile_no.errors.required">Mobile-Number is required</div>
+                                            <div *ngIf="f.user_mobile_no.errors.minlength">Please Enter 10 Digit Valid Mobile Number</div>
+                                            <div *ngIf="f.user_mobile_no.errors.maxlength">Please Enter 10 Digit Valid Mobile Number</div>
+                                            <div *ngIf="f.user_mobile_no.errors.pattern">Letters are not Allowed,Please Enter 10 Digit Valid Mobile Number</div>
+                                        </div>
+                                </div>
+                            </div>
+                           
+
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="address" formControlName="about_me" placeholder="About Yourself" [ngClass]="{ 'is-invalid': submitted && f.about_me.errors }"  rows="3"></textarea>
+                                    <div *ngIf="submitted && f.about_me.errors" class="invalid-feedback">
+                                        <div *ngIf="f.about_me.errors.required">TELL US ABOUT YOU</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="user_password" id="user_password" aria-describedby="emailHelp"
+                                    placeholder="USER PASSWORD" [ngClass]="{ 'is-invalid': submitted && f.user_password.errors }">
+                                    <div *ngIf="submitted && f.user_password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.user_password.errors.required">USER-PASSWORD IS REQUIRED</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+
+                <!--  -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary pl-4 pr-4 mt-3 bg-color"style="width: 50%;" (click)="createUser()">CREATE USER</button>
+                        <!-- <button type="submit" class="btn btn-primary1 ml-4 pl-4 pr-4 mt-3" (click)="next()">Cancel</button> -->
+                    </div>
+                </div>
+              
+            </form>
+        </div>
+    </div>
+</div>
